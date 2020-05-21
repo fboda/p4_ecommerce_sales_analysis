@@ -266,7 +266,7 @@ plt.close()
 
 # > * Moyenne > Mediane  :  distribution asymétrique à droite, ou skewness droit
 
-# In[10]:
+# In[64]:
 
 
 fig = plt.figure(figsize=(11,5))
@@ -274,6 +274,8 @@ sns.set_style("whitegrid")
 sns.distplot(df5[df5['categ']==0]['price'] , color="darkgreen")
 sns.distplot(df5[df5['categ']==1]['price'] , color="saddlebrown")
 sns.distplot(df5[df5['categ']==2]['price'] , color="mediumpurple")
+plt.legend(('- 0 -', '- 1 -', '- 2 -'),
+    loc='center right', bbox_to_anchor=(1, 0.87), ncol=1, shadow=True, title="Catégories")
 
 # TITRE GRAPHE 
 plt.title("Skewness/Asymétrie Droite Tarifs Produits / Catégorie", fontsize=15, color = 'Blue', y=1.05)
@@ -281,9 +283,8 @@ plt.title("Skewness/Asymétrie Droite Tarifs Produits / Catégorie", fontsize=15
 plt.xticks(size=12)
 plt.xlabel("Prix", color='black', size=15) 
 # Libellé Ordonnée (y)
-plt.ylabel("Nombre", color='black', size=15) 
-plt.yticks(color="white")
-plt.figtext(0.11, 0.74,'0        50     100    150     200     250     300', fontsize=12, rotation=90)
+plt.ylabel("Répartition Distribution", color='black', size=15) 
+plt.yticks(size=12)
 
 plt.figtext(0.47, -0.05,'(Figure M2.5bis)', fontsize=12, color = 'gray')
 plt.savefig('figure_M25bis.png', dpi=100, bbox_inches='tight')
